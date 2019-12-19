@@ -41,8 +41,18 @@ window.onload = () => {
     let entries = document.getElementById('entries');
     let error = document.getElementById('error');
     let cancel = document.querySelector('.cancel');
+    let hamburger = document.querySelector('.hamburger-menu');
+    let menu = document.getElementById('menu');
 
 
+    console.log(hamburger);
+
+
+    hamburger.addEventListener('click', function () {
+
+        menu.className += 'scale-up';
+        //menu.style.transform = 'animation: scale 0.5s forwards ease-in';
+    })
     // console.log(bmi);
     // console.log(weightRes);
 
@@ -96,6 +106,8 @@ window.onload = () => {
 
 
 
+
+
     // 
 
 
@@ -112,12 +124,10 @@ window.onload = () => {
         weightRes.style.display = 'none';
 
         if (kg.value === '' && cm.value === '' &&
+            date.value === '' || kg.value === '' || cm.value === '' ||
             date.value === '') {
 
             error.style.display = 'flex';
-
-
-
             cancel.addEventListener('click', function () {
                 error.style.display = 'none';
             })
@@ -167,13 +177,15 @@ window.onload = () => {
 
                 allWrap.style.display = 'block';
                 bmi.style.display = 'flex';
-                weightRes.style.display = 'flex';
+                weightRes.style.display = 'grid';
 
             }, 3000)
 
 
 
         }
+
+        console.log('hey');
 
         e.preventDefault();
     }
