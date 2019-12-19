@@ -1,6 +1,8 @@
 let overlay = document.getElementById('overlay');
 
 
+
+
 window.onload = () => {
 
     let remarks = document.getElementById('remarks');
@@ -37,6 +39,9 @@ window.onload = () => {
     let bmi = document.querySelector('.bmi');
     let weightRes = document.querySelector('.weight-result');
     let entries = document.getElementById('entries');
+    let error = document.getElementById('error');
+    let cancel = document.querySelector('.cancel');
+
 
     // console.log(bmi);
     // console.log(weightRes);
@@ -56,18 +61,35 @@ window.onload = () => {
 
         recordsEntity = JSON.parse(localStorage.getItem('tracks'));
 
+        recordsEntity.reverse();
 
-        recordsEntity.forEach(function (records) {
+
+        for (let x = 0; x < 4; x++) {
+
             entries.innerHTML +=
 
                 `<div class='entry-data'>
             
-            <p class= 'entry-date'> ${records.date}</p>
-            <p class= 'entry-weight'> ${records.weight} <span class='deep-sm'>kg</span></p>
+            <p class= 'entry-date'> ${recordsEntity[x].date}</p>
+            <p class= 'entry-weight'> ${recordsEntity[x].weight} <span class='deep-sm'>kg</span></p>
            
            
-           </div>`;
-        })
+           </div>`
+
+        }
+
+
+        // recordsEntity.forEach(function (records) {
+        //     entries.innerHTML +=
+
+        //         `<div class='entry-data'>
+
+        //     <p class= 'entry-date'> ${records.date}</p>
+        //     <p class= 'entry-weight'> ${records.weight} <span class='deep-sm'>kg</span></p>
+
+
+        //    </div>`;
+        // })
     }
 
 
@@ -75,6 +97,8 @@ window.onload = () => {
 
 
     // 
+
+
 
 
     // validation
@@ -89,6 +113,14 @@ window.onload = () => {
 
         if (kg.value === '' && cm.value === '' &&
             date.value === '') {
+
+            error.style.display = 'flex';
+
+
+
+            cancel.addEventListener('click', function () {
+                error.style.display = 'none';
+            })
             console.log('values cannot be empty');
         } else {
             // console.log(typeof Number(kg.value) + '' + typeof Number(cm.value));
@@ -200,3 +232,7 @@ window.onload = () => {
 
 
 }
+
+
+
+//recordsEntity.forEach(function(records){ if(records.date === '2019-12-11'){console.log('records already exist for this day')}})

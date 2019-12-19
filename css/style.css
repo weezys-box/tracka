@@ -36,6 +36,48 @@ body {
 
 }
 
+.wrapper1 #error {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: #fff;
+    transition: all 0.2s ease-in;
+    overflow: hidden;
+
+
+}
+
+.alert {
+    padding: 1rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    color: #333;
+}
+
+.cancel {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    background: rgb(53, 203, 112);
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    display: block;
+    color: #fff;
+    margin: 1rem auto;
+}
+
 .fade {
     opacity: 0;
 }
