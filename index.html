@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     </rel>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Weight Tracker Application</title>
@@ -17,9 +18,9 @@
 
     <div class="wrapper1">
         <!-- overlay -->
-        <div id="overlay">
-            <h1>TG WEIGHT TRACKA</h1>
-        </div>
+        <!-- <div id="overlay">
+            <h1><span class="tg">TG</span> Weight Tracka</h1>
+        </div> -->
 
         <div id="error">
             <div class="alert">All fileds must be entered
@@ -27,19 +28,34 @@
             </div>
         </div>
 
-        <div id="menu">
-            <ul>
-                <li>Home</li>
-                <li>History</li>
-                <li>About App</li>
-            </ul>
+        <div class="container">
+            <p id="hide"><span class="tg">TG</span> Weight Tracka</p>
+            <p id="tg"><span class="tg">TG</span> Weight Tracka</p>
+
+            <div class="menu-wrap">
+                <input type="checkbox" class="toggler">
+                <div class="hamburger">
+                    <div></div>
+                </div>
+                <div class="menu">
+                    <div>
+                        <div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">About App</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
-        <div class="logo">
-            <div class="hamburger-menu"></div>
-            <p>TG Weight Tracka</p>
-        </div>
+
+
+
         <div class="wrapper2">
             <form id="check-weight">
                 <div class="form-div">
@@ -62,7 +78,7 @@
 
             <!-- GIL LOADER  -->
             <div class="gif-wrap">
-                <img class="gif" src="./images/rolls.gif" alt="">
+                <img class="gif" src="./images/loader.gif" alt="">
             </div>
 
             <div class="weight-result">
@@ -97,7 +113,9 @@
             </div>
 
             <div id="entries">
+                <i class="fas fa-book fa-4x"></i>
                 <h2>Weight Diary</h2>
+
             </div>
 
             <div class="bmi">
@@ -111,7 +129,12 @@
         </div>
     </div>
 
+    <!-- <div class="footer">
+        <p>You can steal if you like, this is not licensed</p>
+        <div class="icons">
 
+        </div>
+    </div> -->
 
     <script src="js/app.js">
 

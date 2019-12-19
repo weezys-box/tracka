@@ -7,10 +7,11 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #fff;
+    position: relative;
 }
 
 .wrapper1 {
-    max-width: 600px;
+    width: 100vw;
     margin: 0 auto;
     height: 100vh;
     overflow: auto;
@@ -145,6 +146,8 @@ body {
 
 .wrapper1 .logo {
     padding: 0.8rem 0;
+    height: 50px;
+
     color: #fff;
     display: flex;
     flex-direction: row;
@@ -152,6 +155,7 @@ body {
     justify-content: space-between;
     padding: 1rem;
     background: rgb(53, 203, 112);
+    /* background: #581845; */
     text-align: center;
     /* box-shadow: 2px 3px 7px #777; */
 }
@@ -162,6 +166,16 @@ body {
     border-radius: 50%;
     background: #fff;
     cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+#tg {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+
 }
 
 
@@ -169,10 +183,18 @@ body {
 .wrapper1 .logo p {
     font-size: 1.1rem;
     font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.wrapper2 {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .wrapper2 .weight-result {
     display: none;
+
     /* flex-direction: row; */
     grid-auto-rows: 1fr 1fr;
     grid-gap: 1rem;
@@ -405,11 +427,37 @@ desc {
 
 }
 
+#entries {
+    /* display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center; */
+    text-align: center;
+
+}
+
+#entries i {
+
+    color: #555;
+    background: none;
+    margin: 1 0 0.7rem 0;
+
+}
+
+.tg {
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 3px;
+    color: rgb(14, 167, 100);
+    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
 #entries h2 {
     text-align: center;
     margin-bottom: 0.8rem;
-    color: #555;
-    font-size: 1.2rem;
+    color: rgb(14, 167, 100);
+    font-size: 1rem;
+    /* font-weight: lighter; */
 }
 
 .entry-data {
@@ -438,11 +486,197 @@ desc {
     font-size: 0.8rem;
 }
 
+/* starts here */
+
+
+
+.container {
+
+    margin: auto;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(53, 203, 112);
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 25px 0 0;
+    position: relative;
+    color: #fff;
+    /* border: 1px solid gray; */
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    padding: 1rem;
+    background: rgb(53, 190, 112);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger>div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.menu-wrap .hamburger>div::before,
+.menu-wrap .hamburger>div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+}
+
+/* Moves Line Down */
+.menu-wrap .hamburger>div::after {
+    top: 10px;
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked+.hamburger>div {
+    transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.menu-wrap .toggler:checked+.hamburger>div:before,
+.menu-wrap .toggler:checked+.hamburger>div:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.menu-wrap .toggler:checked:hover+.hamburger>div {
+    transform: rotate(225deg);
+}
+
+/* Show Menu */
+.menu-wrap .toggler:checked~.menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked~.menu>div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked~.menu>div>div {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu-wrap .menu a {
+    font-size: 1.2rem;
+    transition: all 0.2s ease-in !important
+}
+
+.menu-wrap .menu a:hover {
+    font-size: 1.4rem !important;
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.menu-wrap .menu>div {
+    background: rgb(53, 203, 112);
+    border-radius: 50%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.menu-wrap .menu>div>div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu>div>div>ul>li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu>div>div>ul>li>a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.menu-wrap .menu>div>div>ul>li>a:hover {
+    color: var(--secondary-color);
+}
+
+.tg {
+    padding: 0.5rem;
+    background: #fff;
+    border-radius: 3px;
+    color: rgb(14, 167, 100);
+    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.3);
+}
+
+#hide {
+    visibility: hidden;
+}
+
+
+
+
+
 
 @media(min-width: 489px) {
 
     .wrapper1 {
-        max-width: 1100px;
+        width: 100%;
         box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
     }
 

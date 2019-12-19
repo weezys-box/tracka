@@ -1,4 +1,4 @@
-let overlay = document.getElementById('overlay');
+// let overlay = document.getElementById('overlay');
 
 
 
@@ -7,19 +7,19 @@ window.onload = () => {
 
     let remarks = document.getElementById('remarks');
 
-    setTimeout(function () {
-        overlay.classList += ' fade';
-    }, 1000);
+    // setTimeout(function () {
+    //     overlay.classList += ' fade';
+    // }, 1000);
 
-    setTimeout(function () {
+    // setTimeout(function () {
 
-        overlay.style.zIndex = -1;
+    //     overlay.style.zIndex = -1;
 
-    }, 2000);
+    // }, 2000);
 
-    setTimeout(function () {
-        remarks.innerText = '10.4kg difference remain';
-    }, 2000)
+    // setTimeout(function () {
+    //     remarks.innerText = '10.4kg difference remain';
+    // }, 2000)
 
 
 
@@ -41,18 +41,18 @@ window.onload = () => {
     let entries = document.getElementById('entries');
     let error = document.getElementById('error');
     let cancel = document.querySelector('.cancel');
-    let hamburger = document.querySelector('.hamburger-menu');
+    //let hamburger = document.querySelector('.hamburger-menu');
     let menu = document.getElementById('menu');
 
 
-    console.log(hamburger);
+    //console.log(hamburger);
 
 
-    hamburger.addEventListener('click', function () {
+    //hamburger.addEventListener('click', function () {
 
-        menu.className += 'scale-up';
-        //menu.style.transform = 'animation: scale 0.5s forwards ease-in';
-    })
+    //menu.className += 'scale-up';
+    //menu.style.transform = 'animation: scale 0.5s forwards ease-in';
+    //})
     // console.log(bmi);
     // console.log(weightRes);
 
